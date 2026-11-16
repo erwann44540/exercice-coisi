@@ -17,3 +17,22 @@ Ici, nous nous retrouvons avec trois couches principales au sein de notre backen
 - **Repository** : Cette couche permet de gérer la lecture et la persistance des données.
 
 De plus, nous avons un composant externe qui est la base de données. Ici par exemple, nous pouvons utiliser SQLite.
+
+## Listes des routes de l'API.
+
+Afin de répondre à l'ensemble des fonctions attendus, voici la liste des routes API.
+
+```text
+GET /tasks -> Liste de toutes les tâches.
+
+GET /tasks?status=IN_PROGRESS -> Liste de toutes les tâches en cours.
+
+GET /tasks?status=DONE -> Liste de toutes les tâches terminées.
+
+POST /tasks -> Créer une nouvelle tâche.
+
+PATCH /tasks/{id} -> permet d'éditer une tâche sur les variables choisis. Ici, mettre qu'une tâche est fini, ou affecter un utilisateur sur la tâche. 
+
+DELETE /tasks/{id} -> supprimer une tâche.
+```
+
