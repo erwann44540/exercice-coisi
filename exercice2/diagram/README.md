@@ -36,3 +36,17 @@ PATCH /tasks/{id} -> permet d'éditer une tâche sur les variables choisis. Ici,
 DELETE /tasks/{id} -> supprimer une tâche.
 ```
 
+## Schéma de base de données. 
+
+Désormais, pour correspondre aux fonctions attendus, voici le schéma de la base de donnée suivant : 
+
+![Schéma de la base de donnée](database_exo2.drawio.png)
+
+Bien évidemment, les id de chaque table sont des clés primaire. Ici, j'ai fais le choix d'avoir seulement que deux tables, mais il est tout à fait possible d'avoir une troisième table permettant d'avoir uniquement les deux clés étrangères. Cependant je ne trouvais pas cela pertinant pour cet exercice. 
+
+Il est a noté également que la table User peut être élargis avec un email, et d'autres attributs. Le password de cette table est hashé. 
+
+Pour le #id_owner c'est la clé étrangère correspondant à l'id de l'utilisateur. 
+
+Pour les cardinalités, cela peut être 1..n, ou n..n en fonction des besoins (par exemple si une tâche peut être attribué à plusieurs personnes.).
+
