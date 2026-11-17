@@ -58,6 +58,18 @@ L'envoi des notifications dépend des préférences de l'utilisateur et doit res
 
 Dans le cadre de cet exercice, la gestion des préférences utilisateur ne sera pas implémentée dans le prototype.
 
+### Diagramme de séquence pour une commande passée
+
+Enfin, afin d'obtenir une vue globale du fonctionnement du système lors du passage d'une commande, j'ai réalisé le diagramme de séquence suivant :
+
+![Diagramme de Séquence](diagram/diagram_sequence_order_placed.png)
+
+Tout d'abord, l'API reçoit un événement indiquant qu'une commande a été passée (ORDER_PLACED).
+
+La suite du traitement reste identique au fonctionnement présenté dans les diagrammes précédents.
+
+Concernant l'envoi des notifications, en cas d'échec, plusieurs tentatives seront effectuées avant de considérer l'envoi comme définitivement échoué (suite à la réponse à la question 5 reçue par mail).
+
 ## Liste de questions
 
 - Il y a t-il des contraintes particuliers pour les états des commandes ? (Une commande passée, peut-il passer à livrée sans passer par expédiée)
