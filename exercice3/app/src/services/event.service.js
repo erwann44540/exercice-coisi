@@ -1,12 +1,18 @@
 import {EventServiceInterface} from '../interfaces/event.service.interface.js';
 import {EVENT_TYPES} from '../constants/event.types.js';
 import {EVENTS_MESSAGES} from '../constants/event_messages.types.js';
+import {MessageBroker} from '../message-broker/message.broker.js';
 
 /**
  * @class EventService
  * @description Implementation of the EventServiceInterface.
  */
 export class EventService extends EventServiceInterface {
+    constructor() {
+        super();
+        this.messageBroker = new MessageBroker();
+    }
+
     async publishEvent(event) {
         if (!event) {
             throw new Error('Event is required.');
@@ -16,11 +22,15 @@ export class EventService extends EventServiceInterface {
             throw new Error(`Invalid event type: ${event.type}`);
         }
 
-        return {
+        const notification = {
             type: event.type,
             orderId: event.orderId,
             message: EVENTS_MESSAGES[event.type],
-        }
+        };
+
+        this.messageBroker.publish(event.type, notification);
+        
+        return notification;
     }
 }
 
