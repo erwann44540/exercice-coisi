@@ -1,9 +1,9 @@
 
 import { MessageBroker } from '../brokers/message.broker.js';
 import { EventService } from '../services/event.service.js';
-import { EmailNotification } from '../canal/email.notification.js';
-import { SmsNotification } from '../canal/sms.notification.js';
-import { PhoneNotification } from '../canal/phone.notification.js';
+import { EmailNotification } from '../notification/email.notification.js';
+import { SMSNotification } from '../notification/sms.notification.js';
+import { PhonePushNotification } from '../notification/phone_push.notification.js';
 import { EVENT_TYPES } from '../constants/event.types.js';
 
 const messageBroker = new MessageBroker();
@@ -11,8 +11,8 @@ const eventService = new EventService(messageBroker);
 
 const canal = {
     email: new EmailNotification(),
-    sms: new SmsNotification(),
-    push_phone: new PhoneNotification(),
+    sms: new SMSNotification(),
+    push_phone: new PhonePushNotification(),
 };
 
 const enabledCanals = ['email', 'sms', 'push_phone'];
