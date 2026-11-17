@@ -2,6 +2,10 @@ import {EventService} from '../services/event.service.js';
 import {EVENT_TYPES} from '../constants/event.types.js';
 import {EVENTS_MESSAGES} from '../constants/event_messages.types.js';
 
+/**
+ * @class EventService
+ * @description Implementation of the EventServiceInterface.
+ */
 export class EventService extends EventServiceInterface {
     async publishEvent(event) {
         if (!event) {
