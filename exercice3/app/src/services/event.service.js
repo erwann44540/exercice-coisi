@@ -1,4 +1,4 @@
-import {EventService} from '../services/event.service.js';
+import {EventServiceInterface} from '../interfaces/event.service.interface.js';
 import {EVENT_TYPES} from '../constants/event.types.js';
 import {EVENTS_MESSAGES} from '../constants/event_messages.types.js';
 
