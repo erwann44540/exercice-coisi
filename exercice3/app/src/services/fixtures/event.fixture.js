@@ -1,4 +1,4 @@
-import {EVENT_TYPES} from '../../config/event.config.js';
+import {EVENT_TYPES} from '../../constants/event.types.js';
 
 export class Events {
 

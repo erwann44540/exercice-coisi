@@ -1,16 +1,15 @@
 import {EventServiceInterface} from '../interfaces/event.service.interface.js';
 import {EVENT_TYPES} from '../constants/event.types.js';
 import {EVENTS_MESSAGES} from '../constants/event_messages.types.js';
-import {MessageBroker} from '../message-broker/message.broker.js';
 
 /**
  * @class EventService
  * @description Implementation of the EventServiceInterface.
  */
 export class EventService extends EventServiceInterface {
-    constructor() {
+    constructor(messageBroker) {
         super();
-        this.messageBroker = new MessageBroker();
+        this.messageBroker = messageBroker;
     }
 
     async publishEvent(event) {
