@@ -11,7 +11,7 @@ export class EventController {
         try{
             const event = req.body;
 
-            const notification = awaitthis.eventService.publishEvent(event);
+            const notification = await this.eventService.publishEvent(event);
 
             return res.status(202).json({
                 notification
