@@ -6,7 +6,7 @@ Tout d'abord, afin d'effectuer un système pour avoir une gestion de tâches en 
 
 Voici le schéma de l'architecture ci-joint :
 
-![Schéma d'architecture de l'API REST](architecture_exo2_couche.drawio.png)
+![Schéma d'architecture de l'API REST](diagram/architecture_exo2_couche.drawio.png)
 
 Ici, nous nous retrouvons avec trois couches principales au sein de notre backend :
 
@@ -40,7 +40,7 @@ DELETE /tasks/{id} -> supprimer une tâche.
 
 Désormais, pour correspondre aux fonctions attendus, voici le schéma de la base de donnée suivant : 
 
-![Schéma de la base de donnée](database_exo2.drawio.png)
+![Schéma de la base de donnée](diagram/database_exo2.drawio.png)
 
 Bien évidemment, les id de chaque table sont des clés primaire. Ici, j'ai fais le choix d'avoir seulement que deux tables, mais il est tout à fait possible d'avoir une troisième table permettant d'avoir uniquement les deux clés étrangères. Cependant je ne trouvais pas cela pertinant pour cet exercice. 
 
