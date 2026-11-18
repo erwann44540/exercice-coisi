@@ -5,6 +5,7 @@ import { EmailNotification } from '../notification/email.notification.js';
 import { SMSNotification } from '../notification/sms.notification.js';
 import { PhonePushNotification } from '../notification/phone_push.notification.js';
 import { EVENT_TYPES } from '../constants/event.types.js';
+import { retry } from '../utils/retry.js';
 
 const messageBroker = new MessageBroker();
 const eventService = new EventService(messageBroker);
@@ -25,7 +26,7 @@ async function dispatchNotification(notification) {
                 throw new Error(`Canal not found: ${canalName}`);
             }
 
-            await canalInstance.sendNotification(notification.message);
+            await retry(() => canalInstance.sendNotification(notification.message), 5, 1000);
 
             return canalName;
         })

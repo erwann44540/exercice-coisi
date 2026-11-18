@@ -1,9 +1,9 @@
 import {describe, it, expect, beforeEach, vi} from 'vitest';
 
-import { EmailNotification } from '../notification/email.notification';
-import { SMSNotification } from '../notification/sms.notification';
+import { EmailNotification } from '../notification/email.notification.js';
+import { SMSNotification } from '../notification/sms.notification.js';
 import { PhonePushNotification } from '../notification/phone_push.notification.js'
-import { Events } from '../services/fixtures/event.fixture';
+import { Events } from '../services/fixtures/event.fixture.js';
 
 describe('NotificationConfig', () => {
     let eventService;
